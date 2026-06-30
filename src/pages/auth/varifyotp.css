@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #f9fbff);
+}
+
+/* CENTER WRAPPER */
+.otp-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD DESIGN */
+.otp-card {
+  width: 380px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* TITLE */
+.otp-card h3 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* SUBTEXT */
+.otp-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* OTP INPUT */
+.otp-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 6px;
+  border: 2px solid #e4e6eb;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.otp-input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.25);
+}
+
+/* BUTTON */
+.otp-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.otp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(53, 122, 189, 0.3);
+}
+
+.otp-btn:disabled {
+  background: #a9c4e6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* FOOTER */
+.otp-footer {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+.otp-footer span {
+  color: #4a90e2;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.otp-footer span:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .otp-card {
+    width: 90%;
+    padding: 25px;
+  }
+}
