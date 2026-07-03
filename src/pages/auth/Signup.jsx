@@ -152,18 +152,12 @@ function Signup() {
 
       const data = await response.json();
 
-      if (data.success) {
-
+     
         toast.success(data.message);
         localStorage.setItem("otp_mobile", formData.mobile);
         navigate("/verify-otp");
 
-      } else {
-
-        toast.error(data.message);
-
-
-      }
+  
 
     } catch (error) {
 
