@@ -9,6 +9,7 @@ import VerifyOtp from "./pages/auth/varifyotp";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import VerifyForgotOtp from "./pages/auth/VerifyForgotOtp";
 import ResetPassword from "./pages/auth/ResetPassword";
+import homeS from "./pages/student-dashboard/pages/s-home";
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
       <Route path="/verify-forgot-otp" element={<VerifyForgotOtp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
+      {/* s-dashboard */}
+      <Route path="/student/dashboard" element={<homeS />} />
+     
 
     </Routes>
   );
