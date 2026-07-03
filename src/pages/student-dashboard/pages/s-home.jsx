@@ -14,4 +14,4 @@ function HomeS() {
   );
 }
 
-export default homeS;
+export default HomeS;
