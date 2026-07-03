@@ -15,16 +15,14 @@ function VerifyOtp() {
 
     const email = localStorage.getItem("otp_email");
 
-    if (!email) {
-        toast.error("Email not found. Please signup again.");
-        navigate("/signup");
-        return;
-    }
+   
 
     if (!otp) {
         toast.error("Please enter OTP");
         return;
     }
+
+    
 
     setLoading(true);
 
