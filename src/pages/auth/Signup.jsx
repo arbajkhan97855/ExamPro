@@ -154,7 +154,7 @@ function Signup() {
 
      
         toast.success(data.message);
-        localStorage.setItem("otp_mobile", formData.mobile);
+       localStorage.setItem("otp_email", formData.email);
         navigate("/verify-otp");
 
   
