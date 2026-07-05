@@ -1,0 +1,28 @@
+:root{
+
+    /* Brand */
+    --primary:#6366f1;
+    --danger:#ef4444;
+
+    /* Background */
+    --bg:#f5f7fb;
+    --card:#ffffff;
+
+    /* Sidebar (Light Mode) */
+    --sidebar-bg:#ffffff;
+    --sidebar-card:#f8fafc;
+
+    /* Navbar */
+    --navbar:#ffffff;
+
+    /* Text */
+    --text:#111827;
+    --text-light:#64748b;
+
+    /* Border */
+    --border:#e5e7eb;
+
+    /* Shadow */
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+}

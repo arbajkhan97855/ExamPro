@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/peopleshow/Navbar/Navbar";
 import { FaEnvelope } from "react-icons/fa";
 import "./ForgotPassword.css";
 import toast from "react-hot-toast";

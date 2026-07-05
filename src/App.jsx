@@ -9,7 +9,10 @@ import VerifyOtp from "./pages/auth/varifyotp";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import VerifyForgotOtp from "./pages/auth/VerifyForgotOtp";
 import ResetPassword from "./pages/auth/ResetPassword";
-import HomeS from "./pages/student-dashboard/pages/s-home";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import Dashboard from "./pages/Student/Dashboard";
+import StudentLayout from "./components/Dashboard/Layout/StudentLayout";
+
 
 
 function App() {
@@ -27,7 +30,20 @@ function App() {
       <Route path="/reset-password" element={<ResetPassword />} />
 
       {/* s-dashboard */}
-      <Route path="/student/dashboard" element={<HomeS />} />
+    <Route
+        path="/student"
+        element={
+          <ProtectedRoute>
+            <StudentLayout />
+          </ProtectedRoute>
+        }
+      >
+
+        <Route path="dashboard" element={<Dashboard />} />
+
+      
+
+      </Route>
      
 
     </Routes>

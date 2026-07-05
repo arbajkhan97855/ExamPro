@@ -1,0 +1,243 @@
+.welcome-card{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #290f64
+    );
+
+    border-radius:24px;
+
+    padding:0px 20px 0px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* LEFT */
+
+.welcome-left{
+
+    width:60%;
+
+    z-index:2;
+
+}
+
+.welcome-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    margin-bottom:20px;
+
+}
+
+.welcome-left h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    color:#fff;
+
+}
+
+.welcome-left h2 span{
+
+    color:#fde047;
+
+}
+
+.welcome-left p{
+
+    font-size:16px;
+
+    line-height:28px;
+
+    opacity:.95;
+
+    max-width:520px;
+
+}
+
+
+
+/* RIGHT */
+
+.welcome-right{
+
+    width:40%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2;
+
+}
+
+.welcome-right img{
+
+    width:400px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/* Decorative Circle */
+
+.welcome-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-70px;
+
+    top:-70px;
+
+}
+
+.welcome-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    right:120px;
+
+    bottom:-80px;
+
+}
+
+/* Animation */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .welcome-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .welcome-left{
+
+        width:100%;
+
+    }
+
+    .welcome-right{
+
+        width:100%;
+
+        margin-top:30px;
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:576px){
+
+    .welcome-card{
+
+        padding:25px;
+
+    }
+
+    .welcome-left h2{
+
+        font-size:28px;
+
+    }
+
+    .welcome-left p{
+
+        font-size:14px;
+
+        line-height:24px;
+
+    }
+
+    .welcome-right img{
+
+        width:180px;
+
+    }
+
+}

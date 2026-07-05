@@ -1,12 +1,13 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Hero from "../../components/Hero/Hero";
-import Stats from "../../components/Stats/Stats";
-import Features from "../../components/Features/Features";
-import HowItWorks from "../../components/HowItWorks/HowItWorks";
-import Analytics from "../../components/Analytics/Analytics";
-import Testimonials from "../../components/Testimonials/Testimonials";
-import CTA from "../../components/CTA/CTA";
-import Footer from "../../components/Footer/Footer";
+
+import Hero from "../../components/peopleshow/Hero/Hero";
+import Stats from "../../components/peopleshow/Stats/Stats";
+import Features from "../../components/peopleshow/Features/Features";
+import HowItWorks from "../../components/peopleshow/HowItWorks/HowItWorks";
+import Analytics from "../../components/peopleshow/Analytics/Analytics";
+import Testimonials from "../../components/peopleshow/Testimonials/Testimonials";
+import CTA from "../../components/peopleshow/CTA/CTA";
+import Footer from "../../components/peopleshow/Footer/Footer";
+import Navbar from "../../components/peopleshow/Navbar/Navbar";
 
 
 function Home() {

@@ -1,0 +1,63 @@
+.student-layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#09091b;
+
+}
+
+.layout-right{
+
+    flex:1;
+
+    margin-left:280px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+.layout-content{
+
+    flex:1;
+
+    padding:15px;.student-layout{
+
+display:flex;
+
+min-height:100vh;
+
+background:#f5f7fb;
+
+}
+
+.layout-right{
+
+flex:1;
+
+margin-left:280px;
+
+display:flex;
+
+flex-direction:column;
+
+min-height:100vh;
+
+}
+
+.layout-content{
+
+flex:1;
+
+padding:30px;
+
+}
+
+    overflow-x:hidden;
+
+}

@@ -1,24 +1,5 @@
-:root{
---primary:#4f46e5;
---secondary:#7c3aed;
---dark:#0f172a;
---gray:#64748b;
---light:#f8fafc;
-}
 
-body{
-font-family:Inter,sans-serif;
-overflow-x:hidden;
 
-background:
-radial-gradient(circle at top left,
-rgba(79,70,229,.12),
-transparent 35%),
-radial-gradient(circle at bottom right,
-rgba(124,58,237,.12),
-transparent 35%),
-#fff;
-}
 
 
 

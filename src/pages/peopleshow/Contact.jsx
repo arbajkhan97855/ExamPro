@@ -1,7 +1,7 @@
 
 import { useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/peopleshow/Footer/Footer";
+import Navbar from "../../components/peopleshow/Navbar/Navbar";
 import toast from "react-hot-toast";
 
 function Contact() {

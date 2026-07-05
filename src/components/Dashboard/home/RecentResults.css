@@ -1,0 +1,121 @@
+.recent-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.recent-header{
+
+    margin-bottom:20px;
+
+}
+
+.recent-header h3{
+
+    color:var(--text);
+
+    font-size:22px;
+
+    margin:0;
+
+}
+
+.recent-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.recent-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.recent-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:18px;
+
+}
+
+.success{
+
+    background:#22c55e;
+
+}
+
+.warning{
+
+    background:#f59e0b;
+
+}
+
+.danger{
+
+    background:#ef4444;
+
+}
+
+.recent-info{
+
+    flex:1;
+
+}
+
+.recent-info h4{
+
+    margin:0;
+
+    color:var(--text);
+
+    font-size:16px;
+
+}
+
+.recent-info small{
+
+    color:var(--text-light);
+
+}
+
+.recent-score{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
