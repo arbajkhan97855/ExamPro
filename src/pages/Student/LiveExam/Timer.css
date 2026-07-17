@@ -1,0 +1,87 @@
+/* ==========================
+LIVE EXAM TIMER
+========================== */
+
+.ep-live-timer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 20px;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.ep-live-timer svg{
+
+    font-size:18px;
+
+}
+
+/* Last 10 Min */
+
+.ep-live-timer.warning{
+
+    background:#f59e0b;
+
+}
+
+/* Last 5 Min */
+
+.ep-live-timer.danger{
+
+    background:#dc2626;
+
+    animation:epTimerPulse 1s infinite;
+
+}
+
+@keyframes epTimerPulse{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(220,38,38,.4);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 25px rgba(220,38,38,.7);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(220,38,38,.4);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .ep-live-timer{
+
+        font-size:15px;
+
+        padding:10px 16px;
+
+    }
+
+}

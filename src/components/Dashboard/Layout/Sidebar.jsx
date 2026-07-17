@@ -13,6 +13,7 @@ import {
 
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import Logo from "../../../../public/examPro.svg";
 
 function Sidebar() {
 
@@ -34,7 +35,11 @@ function Sidebar() {
 
                 <div className="logo-circle">
 
-                    EP
+                     <img
+            src={Logo}
+            alt="ExamPro Logo"
+            className="logo-img"
+        />
 
                 </div>
 
@@ -42,7 +47,7 @@ function Sidebar() {
 
                     <h2>ExamPro</h2>
 
-                    <span>Online Examination</span>
+                    <span>Online Examination System</span>
 
                 </div>
 
@@ -81,7 +86,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/available-exams">
+                    <NavLink to="/student/exams">
 
                         <FaBookOpen />
 

@@ -109,15 +109,16 @@ function Footer() {
         <hr />
 
         <div className="copyright">
-
           © 2026 ExamPro.
           All Rights Reserved.
 
         </div>
 
       </div>
-
+   
     </footer>
+
+    
   );
 }
 

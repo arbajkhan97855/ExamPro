@@ -12,6 +12,15 @@ import ResetPassword from "./pages/auth/ResetPassword";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Dashboard from "./pages/Student/Dashboard";
 import StudentLayout from "./components/Dashboard/Layout/StudentLayout";
+import AvailableExams from "./pages/Student/AvailableExams";
+import ExamDetails from "./pages/Student/ExamDetails/ExamDetails";
+import LiveExam from "./pages/Student/LiveExam/LiveExam";
+
+
+
+
+
+
 
 
 
@@ -39,7 +48,11 @@ function App() {
         }
       >
 
+
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="exams" element={<AvailableExams />} />
+       <Route path="exams/:slug" element={<ExamDetails />} />
+       <Route path="live-exam/:slug" element={<LiveExam />}/>
 
       
 

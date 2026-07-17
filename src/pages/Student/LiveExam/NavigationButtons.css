@@ -1,0 +1,113 @@
+.ep-live-nav{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.ep-live-btn{
+
+    flex:1;
+
+    min-width:180px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.ep-prev-btn{
+
+    background:#64748b;
+
+    color:#fff;
+
+}
+
+.ep-prev-btn:hover{
+
+    background:#475569;
+
+}
+
+.ep-next-btn{
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #7c3aed
+
+    );
+
+    color:#fff;
+
+}
+
+.ep-next-btn:hover{
+
+    box-shadow:0 12px 25px rgba(99,102,241,.3);
+
+}
+
+.ep-review-btn{
+
+    background:#f59e0b;
+
+    color:#fff;
+
+}
+
+.ep-review-btn:hover{
+
+    background:#d97706;
+
+}
+
+.ep-submit-btn{
+
+    background:#10b981;
+
+    color:#fff;
+
+}
+
+.ep-submit-btn:hover{
+
+    background:#059669;
+
+}
+
+.ep-live-btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}

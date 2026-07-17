@@ -8,12 +8,8 @@ function Dashboard() {
     return (
 
         <>
-
             <WelcomeCard />
             <DashboardBody />
-
-
-
         </>
 
     );

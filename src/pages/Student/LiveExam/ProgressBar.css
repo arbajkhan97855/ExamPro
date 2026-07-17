@@ -1,0 +1,134 @@
+/* ================================
+   LIVE EXAM PROGRESS BAR
+================================ */
+
+.ep-live-progress{
+
+    width:100%;
+
+    height:16px;
+
+    background:var(--border);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* Fill */
+
+.ep-live-progress-fill{
+
+    position:relative;
+
+    height:100%;
+
+    width:0;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    transition:width .6s ease;
+
+    overflow:hidden;
+
+}
+
+/* Shine Animation */
+
+.ep-live-progress-fill::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    animation:epProgressShine 2s linear infinite;
+
+}
+
+@keyframes epProgressShine{
+
+    from{
+
+        left:-100%;
+
+    }
+
+    to{
+
+        left:140%;
+
+    }
+
+}
+
+/* Percentage */
+
+.ep-live-progress-fill span{
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    padding-right:10px;
+
+    white-space:nowrap;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .ep-live-progress{
+
+        height:14px;
+
+    }
+
+    .ep-live-progress-fill span{
+
+        font-size:10px;
+
+        padding-right:8px;
+
+    }
+
+}

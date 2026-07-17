@@ -1,0 +1,233 @@
+.exam-header{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #312e81
+    );
+
+    border-radius:24px;
+
+    padding:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.exam-header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-80px;
+
+    right:-70px;
+
+}
+
+.exam-header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    bottom:-70px;
+
+    right:180px;
+
+}
+
+.exam-header-left{
+
+    width:60%;
+
+    z-index:2;
+
+}
+
+.exam-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:30px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+
+}
+
+.exam-header-left h2{
+
+    color:#fff;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.exam-header-left h2 span{
+
+    color:#fde047;
+
+}
+
+.exam-header-left p{
+
+    color:rgba(255,255,255,.9);
+
+    line-height:28px;
+
+    max-width:600px;
+
+    margin-bottom:30px;
+
+}
+
+.exam-header-left button{
+
+    border:none;
+
+    background:#fff;
+
+    color:var(--primary);
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.exam-header-left button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.exam-header-right{
+
+    width:32%;
+
+    z-index:2;
+
+}
+
+.free-card{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    color:#fff;
+
+}
+
+.free-card h3{
+
+    margin:0;
+
+    font-size:28px;
+
+}
+
+.free-card span{
+
+    opacity:.9;
+
+}
+
+.progress-box{
+
+    height:10px;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+.progress-fill{
+
+    width:60%;
+
+    height:100%;
+
+    background:#fde047;
+
+    border-radius:20px;
+
+}
+
+.free-card small{
+
+    color:#fff;
+
+    opacity:.85;
+
+}
