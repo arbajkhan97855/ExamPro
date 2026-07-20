@@ -1,9 +1,3 @@
-import {
-    FaCheckCircle,
-    FaRegCircle,
-    FaFlag
-} from "react-icons/fa";
-
 import "./QuestionPalette.css";
 
 function QuestionPalette({
@@ -16,9 +10,78 @@ function QuestionPalette({
 
     answers = {},
 
-    reviewQuestions = []
+    reviewQuestions = [],
+
+    visitedQuestions = [],
+
+    setVisitedQuestions
 
 }) {
+
+const handleQuestionClick=(index)=>{
+
+setCurrentQuestion(index);
+
+const id=questions[index].id;
+
+if(!visitedQuestions.includes(id)){
+
+setVisitedQuestions(prev=>[
+
+...prev,
+
+id
+
+]);
+
+}
+
+}
+
+    const getQuestionStatus = (question, index) => {
+
+        const isCurrent = currentQuestion === index;
+
+        const isVisited = visitedQuestions.includes(question.id);
+
+        const isAnswered = question.id in answers;
+
+        const isReview = reviewQuestions.includes(question.id);
+
+        // Highest Priority
+        if (isCurrent) {
+
+            return "ep-current";
+
+        }
+
+        if (isAnswered && isReview) {
+
+            return "ep-answer-review";
+
+        }
+
+        if (isReview) {
+
+            return "ep-review";
+
+        }
+
+        if (isAnswered) {
+
+            return "ep-answered";
+
+        }
+
+        if (isVisited) {
+
+            return "ep-notanswered";
+
+        }
+
+        return "ep-notvisited";
+
+    };
 
     return (
 
@@ -60,69 +123,59 @@ function QuestionPalette({
 
                 <span>
 
+                    <i className="ep-answer-review"></i>
+
+                    Ans + Review
+
+                </span>
+
+                <span>
+
                     <i className="ep-notanswered"></i>
 
                     Not Answered
 
                 </span>
 
+                <span>
+
+                    <i className="ep-notvisited"></i>
+
+                    Not Visited
+
+                </span>
+
             </div>
 
-            {/* Questions */}
+            {/* Question Buttons */}
 
             <div className="ep-live-palette-grid">
 
                 {
 
-                    questions.map((question, index) => {
+                    questions.map((question, index) => (
 
-                        let className = "ep-notanswered";
+                        <button
 
-                        if (answers[question.id]) {
+                            key={question.id}
 
-                            className = "ep-answered";
+                            className={`ep-live-palette-btn ${getQuestionStatus(question, index)}`}
 
-                        }
+                            onClick={() => handleQuestionClick(index)}
 
-                        if (reviewQuestions.includes(question.id)) {
+                        >
 
-                            className = "ep-review";
+                            {index + 1}
 
-                        }
+                        </button>
 
-                        if (currentQuestion === index) {
-
-                            className = "ep-current";
-
-                        }
-
-                        return (
-
-                            <button
-
-                                key={question.id}
-
-                                className={`ep-live-palette-btn ${className}`}
-
-                                onClick={() =>
-
-                                    setCurrentQuestion(index)
-
-                                }
-
-                            >
-
-                                {index + 1}
-
-                            </button>
-
-                        );
-
-                    })
+                    ))
 
                 }
 
             </div>
+
+           
 
         </aside>
 

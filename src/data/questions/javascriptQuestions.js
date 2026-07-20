@@ -3,7 +3,7 @@ export const javascriptQuestions = [
     {
         id: 1,
 
-        examSlug: "react-js-advanced",
+        examSlug: "javascript-fundamentals",
 
         question:
 
@@ -21,7 +21,7 @@ export const javascriptQuestions = [
 
         ],
 
-        correctAnswer: 2,
+        correctAnswer: 1,
 
         marks: 2,
 
@@ -39,7 +39,7 @@ export const javascriptQuestions = [
     {
         id: 2,
 
-        examSlug: "react-js-advanced",
+        examSlug: "javascript-fundamentals",
 
         question:
 
@@ -75,7 +75,7 @@ export const javascriptQuestions = [
     {
         id: 3,
 
-        examSlug: "react-js-advanced",
+        examSlug: "javascript-fundamentals",
 
         question:
 
@@ -111,7 +111,7 @@ export const javascriptQuestions = [
     {
         id: 4,
 
-        examSlug: "react-js-advanced",
+        examSlug: "javascript-fundamentals",
 
         question:
 
@@ -147,7 +147,7 @@ export const javascriptQuestions = [
     {
         id: 5,
 
-        examSlug: "react-js-advanced",
+        examSlug: "javascript-fundamentals",
 
         question:
 

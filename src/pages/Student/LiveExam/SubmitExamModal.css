@@ -1,0 +1,185 @@
+.ep-submit-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(6px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.ep-submit-modal{
+
+    width:520px;
+
+    max-width:95%;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    position:relative;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.2);
+
+}
+
+.ep-submit-close{
+
+    position:absolute;
+
+    right:18px;
+
+    top:18px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+}
+
+.ep-submit-modal h2{
+
+    color:var(--text);
+
+    margin-bottom:10px;
+
+}
+
+.ep-submit-modal p{
+
+    color:var(--text-light);
+
+    margin-bottom:25px;
+
+}
+
+.ep-submit-summary{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.ep-submit-summary div{
+
+    background:var(--background);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.ep-submit-summary svg{
+
+    font-size:24px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.ep-submit-summary span{
+
+    display:block;
+
+    color:var(--text-light);
+
+    margin-bottom:8px;
+
+}
+
+.ep-submit-summary strong{
+
+    color:var(--text);
+
+    font-size:22px;
+
+}
+
+.ep-submit-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-top:30px;
+
+}
+
+.ep-submit-buttons button{
+
+    flex:1;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.ep-submit-cancel{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+}
+
+.ep-submit-confirm{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #2563eb,
+
+        #7c3aed
+
+    );
+
+    color:#fff;
+
+}

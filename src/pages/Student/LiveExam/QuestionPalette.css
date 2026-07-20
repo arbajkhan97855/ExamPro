@@ -79,6 +79,22 @@
     background:#e5e7eb;
 
 }
+.ep-notvisited{
+
+    background:var(--border);
+
+    color:var(--text);
+
+}
+.ep-answer-review{
+
+    background:#8b5cf6;
+
+    color:#fff;
+
+    border-color:#8b5cf6;
+
+}
 
 .ep-live-palette-grid{
 

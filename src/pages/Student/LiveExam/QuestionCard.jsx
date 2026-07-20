@@ -7,7 +7,10 @@ function QuestionCard({
 
     answers,
 
-    setAnswers
+    setAnswers,
+
+    visitedQuestions,
+setVisitedQuestions
 
 }) {
 
@@ -17,17 +20,29 @@ function QuestionCard({
 
     }
 
-    const handleAnswer = (index) => {
+  const handleAnswer = (index) => {
 
-        setAnswers((prev) => ({
+    setAnswers(prev => ({
+
+        ...prev,
+
+        [question.id]: index
+
+    }));
+
+    if (!visitedQuestions.includes(question.id)) {
+
+        setVisitedQuestions(prev => [
 
             ...prev,
 
-            [question.id]: index
+            question.id
 
-        }));
+        ]);
 
-    };
+    }
+
+};
 
     return (
 

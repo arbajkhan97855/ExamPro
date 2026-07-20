@@ -15,6 +15,10 @@ import StudentLayout from "./components/Dashboard/Layout/StudentLayout";
 import AvailableExams from "./pages/Student/AvailableExams";
 import ExamDetails from "./pages/Student/ExamDetails/ExamDetails";
 import LiveExam from "./pages/Student/LiveExam/LiveExam";
+import Result from "./pages/Student/LiveExam/Result";
+import ResultReview from "./pages/Student/LiveExam/ResultReview";
+import ResultHistory from "./pages/Student/ResultHistory/ResultHistory";
+
 
 
 
@@ -53,6 +57,9 @@ function App() {
         <Route path="exams" element={<AvailableExams />} />
        <Route path="exams/:slug" element={<ExamDetails />} />
        <Route path="live-exam/:slug" element={<LiveExam />}/>
+       <Route path="result/:slug" element={<Result />}/>
+       <Route path="result-review/:slug" element={<ResultReview />}/>
+       <Route path="result-history" element={<ResultHistory />}/>
 
       
 

@@ -4,12 +4,15 @@ import {
     FaArrowLeft,
     FaArrowRight,
     FaBookmark,
-    FaPaperPlane
+    FaPaperPlane,
+    FaEraser
 } from "react-icons/fa";
 
 import "./NavigationButtons.css";
 
 function NavigationButtons({
+
+    question,
 
     currentQuestion,
 
@@ -19,39 +22,97 @@ function NavigationButtons({
 
     answers,
 
+    setAnswers,
+
     reviewQuestions,
 
     setReviewQuestions,
+
+    visitedQuestions,
+
+    setVisitedQuestions,
 
     onSubmit
 
 }) {
 
-    const handleReview = () => {
+ const markVisited=()=>{
 
-        if (reviewQuestions.includes(currentQuestion)) {
+if(
 
-            setReviewQuestions(
+!visitedQuestions.includes(question.id)
 
-                reviewQuestions.filter(
+){
 
-                    item => item !== currentQuestion
+setVisitedQuestions(prev=>
 
-                )
+[
 
-            );
+...prev,
+
+question.id
+
+]);
+
+}
+
+}
+
+    const handlePrevious = () => {
+
+        if (currentQuestion > 0) {
+
+            setCurrentQuestion(currentQuestion - 1);
 
         }
 
-        else {
+    };
 
-            setReviewQuestions([
+    const handleNext = () => {
 
-                ...reviewQuestions,
+        markVisited(currentQuestion);
 
-                currentQuestion
+        if (currentQuestion < totalQuestions - 1) {
 
-            ]);
+            setCurrentQuestion(currentQuestion + 1);
+
+        }
+
+    };
+
+const handleClearResponse = () => {
+
+    setAnswers(prev => {
+
+        const updated = { ...prev };
+
+        delete updated[question.id];
+
+        return updated;
+
+    });
+
+    setReviewQuestions(prev =>
+
+        prev.filter(id => id !== question.id)
+
+    );
+
+};
+
+    const handleReview = () => {
+
+        if (!reviewQuestions.includes(question.id)) {
+
+            setReviewQuestions(prev => [...prev, question.id]);
+
+        }
+
+        markVisited(currentQuestion);
+
+        if (currentQuestion < totalQuestions - 1) {
+
+            setCurrentQuestion(currentQuestion + 1);
 
         }
 
@@ -63,19 +124,15 @@ function NavigationButtons({
 
             <motion.button
 
-                whileHover={{ scale:1.03 }}
+                whileHover={{ scale: 1.03 }}
 
-                whileTap={{ scale:.95 }}
+                whileTap={{ scale: .95 }}
 
-                disabled={currentQuestion===0}
+                disabled={currentQuestion === 0}
 
                 className="ep-live-btn ep-prev-btn"
 
-                onClick={()=>
-
-                    setCurrentQuestion(currentQuestion-1)
-
-                }
+                onClick={handlePrevious}
 
             >
 
@@ -87,9 +144,27 @@ function NavigationButtons({
 
             <motion.button
 
-                whileHover={{ scale:1.03 }}
+                whileHover={{ scale: 1.03 }}
 
-                whileTap={{ scale:.95 }}
+                whileTap={{ scale: .95 }}
+
+                className="ep-live-btn ep-clear-btn"
+
+                onClick={handleClearResponse}
+
+            >
+
+                <FaEraser />
+
+                Clear Response
+
+            </motion.button>
+
+            <motion.button
+
+                whileHover={{ scale: 1.03 }}
+
+                whileTap={{ scale: .95 }}
 
                 className="ep-live-btn ep-review-btn"
 
@@ -99,69 +174,53 @@ function NavigationButtons({
 
                 <FaBookmark />
 
-                {
-
-                    reviewQuestions.includes(currentQuestion)
-
-                    ?
-
-                    "Reviewed"
-
-                    :
-
-                    "Mark Review"
-
-                }
+                Mark Review & Next
 
             </motion.button>
 
             {
 
-                currentQuestion===totalQuestions-1
+                currentQuestion === totalQuestions - 1
 
-                ?
+                    ?
 
-                <motion.button
+                    <motion.button
 
-                    whileHover={{ scale:1.03 }}
+                        whileHover={{ scale: 1.03 }}
 
-                    whileTap={{ scale:.95 }}
+                        whileTap={{ scale: .95 }}
 
-                    className="ep-live-btn ep-submit-btn"
+                        className="ep-live-btn ep-submit-btn"
 
-                    onClick={onSubmit}
+                        onClick={onSubmit}
 
-                >
+                    >
 
-                    <FaPaperPlane />
+                        <FaPaperPlane />
 
-                    Submit Exam
+                        Submit Exam
 
-                </motion.button>
+                    </motion.button>
 
-                :
+                    :
 
-                <motion.button
+                    <motion.button
 
-                    whileHover={{ scale:1.03 }}
+                        whileHover={{ scale: 1.03 }}
 
-                    whileTap={{ scale:.95 }}
+                        whileTap={{ scale: .95 }}
 
-                    className="ep-live-btn ep-next-btn"
+                        className="ep-live-btn ep-next-btn"
 
-                    onClick={()=>
+                        onClick={handleNext}
 
-                        setCurrentQuestion(currentQuestion+1)
+                    >
 
-                    }
+                        Save & Next
 
-                >
+                        <FaArrowRight />
 
-                    Save & Next
-
-                    <FaArrowRight />
-
-                </motion.button>
+                    </motion.button>
 
             }
 

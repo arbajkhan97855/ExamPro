@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import { exams } from "../../../data/mockData";
 
 import {
@@ -14,6 +15,7 @@ import ExamHeader from "./ExamHeader";
 import QuestionCard from "./QuestionCard";
 import QuestionPalette from "./QuestionPalette";
 import NavigationButtons from "./NavigationButtons";
+import SubmitExamModal from "./SubmitExamModal";
 
 import "./LiveExam.css";
 
@@ -21,17 +23,14 @@ function LiveExam() {
 
     const { slug } = useParams();
 
+    const navigate = useNavigate();
 
     const examQuestions = {
 
         "react-js-advanced": reactQuestions,
-
         "javascript-fundamentals": javascriptQuestions,
-
         "python-programming": pythonQuestions,
-
         "html-css-javascript": htmlCssQuestions,
-
         "node-js-backend": nodeQuestions
 
     };
@@ -41,47 +40,78 @@ function LiveExam() {
     const exam = exams.find(item => item.slug === slug);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
+
     const [answers, setAnswers] = useState({});
 
     const [reviewQuestions, setReviewQuestions] = useState([]);
+
+    const [visitedQuestions, setVisitedQuestions] = useState([questions[0]?.id]);
+
     const [showSubmitModal, setShowSubmitModal] = useState(false);
 
-const handleSubmit = () => {
+    const answeredQuestions = Object.keys(answers).length;
 
-    setShowSubmitModal(true);
+    if (!exam) {
 
-};
-  
-const answeredQuestions = Object.keys(answers).length;
-const [visitedQuestions, setVisitedQuestions] = useState([0]);
+        return <h2>Exam Not Found</h2>;
 
-if (!exam) {
+    }
 
-    return <h2>Exam Not Found</h2>;
+    if (questions.length === 0) {
 
-}
+        return <h2>No Questions Available</h2>;
 
-if (questions.length === 0) {
+    }
 
-    return <h2>No Questions Available</h2>;
+    const handleSubmit = () => {
 
-}
+        setShowSubmitModal(true);
+
+    };
+
+    const handleConfirmSubmit = () => {
+
+        const resultData = {
+
+            exam,
+
+            questions,
+
+            answers,
+
+            reviewQuestions,
+
+            visitedQuestions
+
+        };
+
+        localStorage.setItem(
+
+            "examResult",
+
+            JSON.stringify(resultData)
+
+        );
+
+        navigate(`/student/result/${slug}`);
+
+    };
 
     return (
 
         <section className="ep-live-page">
 
-       <ExamHeader
+            <ExamHeader
 
-    exam={exam}
+                exam={exam}
 
-    currentQuestion={currentQuestion + 1}
+                currentQuestion={currentQuestion + 1}
 
-    totalQuestions={questions.length}
+                totalQuestions={questions.length}
 
-    answeredQuestions={answeredQuestions}
+                answeredQuestions={answeredQuestions}
 
-/>
+            />
 
             <div className="ep-live-wrapper">
 
@@ -94,54 +124,80 @@ if (questions.length === 0) {
                         answers={answers}
 
                         setAnswers={setAnswers}
+                        reviewQuestions={reviewQuestions}
+                        setReviewQuestions={setReviewQuestions}
 
                     />
 
-                  <NavigationButtons
+                    <NavigationButtons
 
-    currentQuestion={currentQuestion}
+                        question={questions[currentQuestion]}
 
-    totalQuestions={questions.length}
+                        currentQuestion={currentQuestion}
 
-    setCurrentQuestion={setCurrentQuestion}
+                        totalQuestions={questions.length}
 
-    answers={answers}
+                        setCurrentQuestion={setCurrentQuestion}
 
-    reviewQuestions={reviewQuestions}
+                        answers={answers}
 
-    setReviewQuestions={setReviewQuestions}
+                        setAnswers={setAnswers}
 
-    visitedQuestions={visitedQuestions}
+                        reviewQuestions={reviewQuestions}
 
-    setVisitedQuestions={setVisitedQuestions}
+                        setReviewQuestions={setReviewQuestions}
 
-    onSubmit={handleSubmit}
+                        visitedQuestions={visitedQuestions}
 
-/>
+                        setVisitedQuestions={setVisitedQuestions}
+
+                        onSubmit={handleSubmit}
+
+                    />
 
                 </div>
 
                 <div className="ep-live-right">
 
-                   <QuestionPalette
+                    <QuestionPalette
 
-    questions={questions}
+                        questions={questions}
 
-    currentQuestion={currentQuestion}
+                        currentQuestion={currentQuestion}
 
-    setCurrentQuestion={setCurrentQuestion}
+                        setCurrentQuestion={setCurrentQuestion}
 
-    answers={answers}
+                        answers={answers}
 
-    reviewQuestions={reviewQuestions}
+                        reviewQuestions={reviewQuestions}
 
-    visitedQuestions={visitedQuestions}
+                        visitedQuestions={visitedQuestions}
 
-/>
+                        setVisitedQuestions={setVisitedQuestions}
+
+                    />
 
                 </div>
 
             </div>
+
+            <SubmitExamModal
+
+                show={showSubmitModal}
+
+                onClose={() => setShowSubmitModal(false)}
+
+                onConfirm={handleConfirmSubmit}
+
+                totalQuestions={questions.length}
+
+                answeredQuestions={answeredQuestions}
+
+                reviewQuestions={reviewQuestions}
+
+                visitedQuestions={visitedQuestions}
+
+            />
 
         </section>
 

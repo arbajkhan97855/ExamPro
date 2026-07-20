@@ -8,12 +8,13 @@ import {
     FaUserGraduate,
     FaCog,
     FaLifeRing,
-    FaSignOutAlt
+    FaSignOutAlt,
+    FaHistory
 } from "react-icons/fa";
 
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
-import Logo from "../../../../public/examPro.svg";
+// import Logo from "../../../../public/examPro.svg";
 
 function Sidebar() {
 
@@ -36,7 +37,7 @@ function Sidebar() {
                 <div className="logo-circle">
 
                      <img
-            src={Logo}
+            src="/examPro.svg"
             alt="ExamPro Logo"
             className="logo-img"
         />
@@ -110,11 +111,11 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/results">
+                    <NavLink to="/student/result-history">
 
-                        <FaChartLine />
+                         <FaHistory />
 
-                        <span>Results</span>
+                        <span>Result History</span>
 
                     </NavLink>
 
