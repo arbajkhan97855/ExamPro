@@ -68,7 +68,7 @@ font-size:15px;
 
 padding:18px;
 
-text-align:center;
+text-align:start;
 
 border-bottom:1px solid var(--border);
 
@@ -76,11 +76,7 @@ color:var(--text);
 
 }
 
-.ep-history-table tr:hover{
 
-background:var(--secondary);
-
-}
 
 .pass{
 

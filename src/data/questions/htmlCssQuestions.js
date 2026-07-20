@@ -1,183 +1,1122 @@
 export const htmlCssQuestions = [
 
-    {
-        id: 1,
+{
+    id: 1,
 
-        examSlug: "react-js-advanced",
+    examSlug: "html-css-fundamentals",
 
-        question:
+    question: "What does HTML stand for?",
 
-            "Which React Hook is used to perform side effects in functional components?",
+    options: [
+        "Hyper Text Markup Language",
+        "High Text Machine Language",
+        "Hyper Transfer Markup Language",
+        "Home Tool Markup Language"
+    ],
 
-        options: [
+    correctAnswer: 0,
 
-            "useState",
+    marks: 2,
 
-            "useEffect",
+    negativeMarks: 0,
 
-            "useMemo",
+    explanation:
+        "HTML stands for Hyper Text Markup Language.",
 
-            "useRef"
+    difficulty: "Easy",
 
-        ],
+    category: "HTML Basics"
+},
 
-        correctAnswer: 2,
+{
+    id: 2,
 
-        marks: 2,
+    examSlug: "html-css-fundamentals",
 
-        negativeMarks: 0,
+    question: "Which HTML tag is used to create the largest heading?",
 
-        explanation:
+    options: [
+        "<h6>",
+        "<heading>",
+        "<h1>",
+        "<head>"
+    ],
 
-            "useEffect is used for API calls, subscriptions, DOM updates and other side effects.",
+    correctAnswer: 2,
 
-        difficulty: "Easy",
+    marks: 2,
 
-        category: "Hooks"
-    },
+    negativeMarks: 0,
 
-    {
-        id: 2,
+    explanation:
+        "<h1> is the largest heading tag in HTML.",
 
-        examSlug: "react-js-advanced",
+    difficulty: "Easy",
 
-        question:
+    category: "HTML Basics"
+},
 
-            "Which hook is used to share data globally without prop drilling?",
+{
+    id: 3,
 
-        options: [
+    examSlug: "html-css-fundamentals",
 
-            "useReducer",
+    question: "Which HTML tag is used to insert a line break?",
 
-            "Context API",
+    options: [
+        "<break>",
+        "<br>",
+        "<lb>",
+        "<hr>"
+    ],
 
-            "useMemo",
+    correctAnswer: 1,
 
-            "useRef"
+    marks: 2,
 
-        ],
+    negativeMarks: 0,
 
-        correctAnswer: 1,
+    explanation:
+        "<br> inserts a line break.",
 
-        marks: 2,
+    difficulty: "Easy",
 
-        negativeMarks: 0,
+    category: "HTML Basics"
+},
 
-        explanation:
+{
+    id: 4,
 
-            "Context API allows sharing state across the component tree.",
+    examSlug: "html-css-fundamentals",
 
-        difficulty: "Easy",
+    question: "Which tag is used to create a hyperlink?",
 
-        category: "Context API"
-    },
+    options: [
+        "<link>",
+        "<href>",
+        "<a>",
+        "<url>"
+    ],
 
-    {
-        id: 3,
+    correctAnswer: 2,
 
-        examSlug: "react-js-advanced",
+    marks: 2,
 
-        question:
+    negativeMarks: 0,
 
-            "Which Hook is used to store mutable values without re-rendering the component?",
+    explanation:
+        "<a> tag creates hyperlinks.",
 
-        options: [
+    difficulty: "Easy",
 
-            "useRef",
+    category: "Links"
+},
 
-            "useState",
+{
+    id: 5,
 
-            "useMemo",
+    examSlug: "html-css-fundamentals",
 
-            "useContext"
+    question: "Which attribute specifies the destination of a hyperlink?",
 
-        ],
+    options: [
+        "src",
+        "href",
+        "link",
+        "target"
+    ],
 
-        correctAnswer: 0,
+    correctAnswer: 1,
 
-        marks: 2,
+    marks: 2,
 
-        negativeMarks: 0,
+    negativeMarks: 0,
 
-        explanation:
+    explanation:
+        "href defines the destination URL.",
 
-            "useRef stores mutable values without triggering a re-render.",
+    difficulty: "Easy",
 
-        difficulty: "Medium",
+    category: "Links"
+},
 
-        category: "Hooks"
-    },
+{
+    id: 6,
 
-    {
-        id: 4,
+    examSlug: "html-css-fundamentals",
 
-        examSlug: "react-js-advanced",
+    question: "Which HTML tag is used to insert an image?",
 
-        question:
+    options: [
+        "<picture>",
+        "<image>",
+        "<img>",
+        "<src>"
+    ],
 
-            "Which library is commonly used for routing in React?",
+    correctAnswer: 2,
 
-        options: [
+    marks: 2,
 
-            "Axios",
+    negativeMarks: 0,
 
-            "React Router DOM",
+    explanation:
+        "<img> is used to display images.",
 
-            "Redux",
+    difficulty: "Easy",
 
-            "Bootstrap"
+    category: "Images"
+},
 
-        ],
+{
+    id: 7,
 
-        correctAnswer: 1,
+    examSlug: "html-css-fundamentals",
 
-        marks: 2,
+    question: "Which attribute specifies the image source?",
 
-        negativeMarks: 0,
+    options: [
+        "href",
+        "alt",
+        "src",
+        "link"
+    ],
 
-        explanation:
+    correctAnswer: 2,
 
-            "React Router DOM provides client-side routing.",
+    marks: 2,
 
-        difficulty: "Easy",
+    negativeMarks: 0,
 
-        category: "Routing"
-    },
+    explanation:
+        "src specifies the image location.",
 
-    {
-        id: 5,
+    difficulty: "Easy",
 
-        examSlug: "react-js-advanced",
+    category: "Images"
+},
 
-        question:
+{
+    id: 8,
 
-            "Which Hook is useful for memoizing expensive calculations?",
+    examSlug: "html-css-fundamentals",
 
-        options: [
+    question: "Which HTML tag creates an unordered list?",
 
-            "useMemo",
+    options: [
+        "<ol>",
+        "<list>",
+        "<ul>",
+        "<li>"
+    ],
 
-            "useEffect",
+    correctAnswer: 2,
 
-            "useState",
+    marks: 2,
 
-            "useRef"
+    negativeMarks: 0,
 
-        ],
+    explanation:
+        "<ul> creates an unordered list.",
 
-        correctAnswer: 0,
+    difficulty: "Easy",
 
-        marks: 2,
+    category: "Lists"
+},
 
-        negativeMarks: 0,
+{
+    id: 9,
 
-        explanation:
+    examSlug: "html-css-fundamentals",
 
-            "useMemo memoizes expensive computations.",
+    question: "Which tag represents a list item?",
 
-        difficulty: "Medium",
+    options: [
+        "<ul>",
+        "<ol>",
+        "<li>",
+        "<list>"
+    ],
 
-        category: "Performance"
-    }
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<li> defines a list item.",
+
+    difficulty: "Easy",
+
+    category: "Lists"
+},
+
+{
+    id: 10,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which HTML tag is used to create a table row?",
+
+    options: [
+        "<td>",
+        "<table>",
+        "<tr>",
+        "<th>"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<tr> defines a table row.",
+
+    difficulty: "Easy",
+
+    category: "Tables"
+},
+
+{
+    id: 11,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which HTML element is used to create a form?",
+
+    options: [
+        "<form>",
+        "<input>",
+        "<fieldset>",
+        "<label>"
+    ],
+
+    correctAnswer: 0,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<form> element is used to create HTML forms.",
+
+    difficulty: "Easy",
+
+    category: "Forms"
+},
+
+{
+    id: 12,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which input type hides the entered characters?",
+
+    options: [
+        "text",
+        "email",
+        "password",
+        "hidden"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "type='password' hides the entered text.",
+
+    difficulty: "Easy",
+
+    category: "Forms"
+},
+
+{
+    id: 13,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which HTML5 input type is used for email validation?",
+
+    options: [
+        "mail",
+        "email",
+        "text",
+        "validate"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "type='email' validates email addresses.",
+
+    difficulty: "Easy",
+
+    category: "Forms"
+},
+
+{
+    id: 14,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which semantic tag represents the main navigation section?",
+
+    options: [
+        "<header>",
+        "<nav>",
+        "<section>",
+        "<aside>"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<nav> defines navigation links.",
+
+    difficulty: "Easy",
+
+    category: "HTML5"
+},
+
+{
+    id: 15,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which semantic element represents the main content of a webpage?",
+
+    options: [
+        "<main>",
+        "<section>",
+        "<article>",
+        "<body>"
+    ],
+
+    correctAnswer: 0,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<main> represents the primary content of a page.",
+
+    difficulty: "Medium",
+
+    category: "HTML5"
+},
+
+{
+    id: 16,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which HTML tag is used to embed audio?",
+
+    options: [
+        "<music>",
+        "<mp3>",
+        "<audio>",
+        "<sound>"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<audio> is used to embed audio files.",
+
+    difficulty: "Medium",
+
+    category: "Media"
+},
+
+{
+    id: 17,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which HTML tag is used to embed video?",
+
+    options: [
+        "<movie>",
+        "<media>",
+        "<video>",
+        "<iframe>"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "<video> embeds video content.",
+
+    difficulty: "Medium",
+
+    category: "Media"
+},
+
+{
+    id: 18,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property changes the text color?",
+
+    options: [
+        "font-color",
+        "background-color",
+        "color",
+        "text-color"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The color property changes the text color.",
+
+    difficulty: "Easy",
+
+    category: "CSS Basics"
+},
+
+{
+    id: 19,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property changes the background color?",
+
+    options: [
+        "background",
+        "background-color",
+        "bgcolor",
+        "color"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "background-color sets the background color.",
+
+    difficulty: "Easy",
+
+    category: "CSS Basics"
+},
+
+{
+    id: 20,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS selector selects an element by its id?",
+
+    options: [
+        ".id",
+        "#id",
+        "*id",
+        "@id"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The # selector targets an element by its id.",
+
+    difficulty: "Easy",
+
+    category: "CSS Selectors"
+},
+
+{
+    id: 21,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS selector is used to select elements by class?",
+
+    options: [
+        "#",
+        ".",
+        "*",
+        "@"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The dot (.) selector selects elements by their class name.",
+
+    difficulty: "Easy",
+
+    category: "CSS Selectors"
+},
+
+{
+    id: 22,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS selector selects all elements on a webpage?",
+
+    options: [
+        "#",
+        ".",
+        "*",
+        "all"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The universal selector (*) selects every element.",
+
+    difficulty: "Easy",
+
+    category: "CSS Selectors"
+},
+
+{
+    id: 23,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property creates space outside an element's border?",
+
+    options: [
+        "padding",
+        "spacing",
+        "margin",
+        "border-spacing"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "Margin creates space outside the border.",
+
+    difficulty: "Easy",
+
+    category: "Box Model"
+},
+
+{
+    id: 24,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property creates space inside an element's border?",
+
+    options: [
+        "margin",
+        "padding",
+        "spacing",
+        "border"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "Padding creates space between the content and border.",
+
+    difficulty: "Easy",
+
+    category: "Box Model"
+},
+
+{
+    id: 25,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property specifies the thickness and style of an element's border?",
+
+    options: [
+        "outline",
+        "border",
+        "stroke",
+        "frame"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The border property defines border width, style, and color.",
+
+    difficulty: "Medium",
+
+    category: "Box Model"
+},
+
+{
+    id: 26,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS display value makes an element behave like a block element?",
+
+    options: [
+        "inline",
+        "inline-block",
+        "block",
+        "flex"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "display: block makes an element occupy the full available width.",
+
+    difficulty: "Medium",
+
+    category: "Display"
+},
+
+{
+    id: 27,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS position value places an element relative to its normal position?",
+
+    options: [
+        "absolute",
+        "fixed",
+        "relative",
+        "sticky"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "position: relative keeps the element in normal flow while allowing offsets.",
+
+    difficulty: "Medium",
+
+    category: "Position"
+},
+
+{
+    id: 28,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS position value removes an element from the normal document flow?",
+
+    options: [
+        "relative",
+        "absolute",
+        "static",
+        "inherit"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "position: absolute removes the element from the normal document flow.",
+
+    difficulty: "Medium",
+
+    category: "Position"
+},
+
+{
+    id: 29,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property enables the Flexbox layout?",
+
+    options: [
+        "display: flex",
+        "position: flex",
+        "flexbox: true",
+        "layout: flex"
+    ],
+
+    correctAnswer: 0,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "display: flex creates a flex container.",
+
+    difficulty: "Medium",
+
+    category: "Flexbox"
+},
+
+{
+    id: 30,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property enables Grid Layout?",
+
+    options: [
+        "display: grid",
+        "grid: true",
+        "layout: grid",
+        "position: grid"
+    ],
+
+    correctAnswer: 0,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "display: grid creates a CSS Grid container.",
+
+    difficulty: "Medium",
+
+    category: "CSS Grid"
+},
+{
+    id: 31,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property changes the direction of flex items?",
+
+    options: [
+        "justify-content",
+        "flex-wrap",
+        "flex-direction",
+        "align-items"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "flex-direction specifies the direction of flex items (row, column, etc.).",
+
+    difficulty: "Medium",
+
+    category: "Flexbox"
+},
+
+{
+    id: 32,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property aligns flex items horizontally?",
+
+    options: [
+        "align-items",
+        "justify-content",
+        "align-content",
+        "place-items"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "justify-content aligns flex items along the main axis.",
+
+    difficulty: "Medium",
+
+    category: "Flexbox"
+},
+
+{
+    id: 33,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property specifies the number and size of columns in a Grid layout?",
+
+    options: [
+        "grid-column",
+        "grid-template-columns",
+        "grid-auto-columns",
+        "column-count"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "grid-template-columns defines the columns of a CSS Grid container.",
+
+    difficulty: "Medium",
+
+    category: "CSS Grid"
+},
+
+{
+    id: 34,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property is used to rotate an element?",
+
+    options: [
+        "rotate",
+        "transform",
+        "translate",
+        "transition"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "The transform property is used with rotate(), scale(), translate(), etc.",
+
+    difficulty: "Medium",
+
+    category: "Transform"
+},
+
+{
+    id: 35,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS property creates smooth changes between property values?",
+
+    options: [
+        "animation",
+        "transform",
+        "transition",
+        "effect"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "transition creates smooth animations between CSS property changes.",
+
+    difficulty: "Medium",
+
+    category: "Transition"
+},
+
+{
+    id: 36,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS rule is used to define an animation?",
+
+    options: [
+        "@animation",
+        "@transition",
+        "@keyframes",
+        "@frames"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "@keyframes defines the stages of a CSS animation.",
+
+    difficulty: "Hard",
+
+    category: "Animation"
+},
+
+{
+    id: 37,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which CSS feature is primarily used to make websites responsive?",
+
+    options: [
+        "Media Queries",
+        "Variables",
+        "Animations",
+        "Transforms"
+    ],
+
+    correctAnswer: 0,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "Media Queries allow styles to change based on screen size.",
+
+    difficulty: "Hard",
+
+    category: "Responsive Design"
+},
+
+{
+    id: 38,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which pseudo-class applies styles when the mouse pointer is over an element?",
+
+    options: [
+        ":focus",
+        ":active",
+        ":hover",
+        ":visited"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        ":hover applies styles when the user hovers over an element.",
+
+    difficulty: "Medium",
+
+    category: "Pseudo Classes"
+},
+
+{
+    id: 39,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which pseudo-element is used to style the first line of a paragraph?",
+
+    options: [
+        "::before",
+        "::after",
+        "::first-line",
+        "::first-letter"
+    ],
+
+    correctAnswer: 2,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "::first-line styles only the first line of an element.",
+
+    difficulty: "Hard",
+
+    category: "Pseudo Elements"
+},
+
+{
+    id: 40,
+
+    examSlug: "html-css-fundamentals",
+
+    question: "Which syntax is used to declare a CSS custom property (variable)?",
+
+    options: [
+        "$primary: red;",
+        "--primary: red;",
+        "@primary: red;",
+        "var-primary: red;"
+    ],
+
+    correctAnswer: 1,
+
+    marks: 2,
+
+    negativeMarks: 0,
+
+    explanation:
+        "CSS custom properties are declared using --variable-name and accessed with var().",
+
+    difficulty: "Hard",
+
+    category: "CSS Variables"
+}
 
 ];

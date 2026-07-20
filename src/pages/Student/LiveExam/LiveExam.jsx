@@ -8,7 +8,8 @@ import {
     javascriptQuestions,
     pythonQuestions,
     htmlCssQuestions,
-    nodeQuestions
+    nodeQuestions,
+    mysqlQuestions
 } from "../../../data/questions";
 
 import ExamHeader from "./ExamHeader";
@@ -29,9 +30,10 @@ function LiveExam() {
 
         "react-js-advanced": reactQuestions,
         "javascript-fundamentals": javascriptQuestions,
-        "python-programming": pythonQuestions,
-        "html-css-javascript": htmlCssQuestions,
-        "node-js-backend": nodeQuestions
+        "python-fundamentals": pythonQuestions,
+        "html-css-fundamentals": htmlCssQuestions,
+        "nodejs-backend": nodeQuestions,
+        "mysql-fundamentals": mysqlQuestions
 
     };
 

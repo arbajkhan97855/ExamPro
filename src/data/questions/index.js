@@ -7,3 +7,5 @@ export { pythonQuestions } from "./pythonQuestions";
 export { htmlCssQuestions } from "./htmlCssQuestions";
 
 export { nodeQuestions } from "./nodeQuestions";
+
+export { mysqlQuestions } from "./mysqlQuestions";

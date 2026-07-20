@@ -3,7 +3,8 @@ import {
     FaPython,
     FaReact,
     FaNodeJs,
-    FaDatabase
+    FaDatabase,
+    FaHtml5
 } from "react-icons/fa";
 
 export const exams = [
@@ -210,13 +211,13 @@ FREE EXAM 3
 
     banner:"https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=900&q=80",
 
-    tier:"Free",
+    tier:"Premium",
 
-    price:0,
+    price:299,
 
-    discount:0,
+    discount:20,
 
-    finalPrice:0,
+    finalPrice:239,
 
     category:"Database",
 
@@ -453,7 +454,103 @@ PREMIUM EXAM 2
         "Backend Deployment"
     ]
 
-}
+},
+
+/* =======================================================
+FREE EXAM 4
+======================================================= */
+
+{
+    id: "html-css-fundamentals",
+
+    slug: "html-css-fundamentals",
+
+    name: "HTML & CSS Fundamentals",
+
+    shortDescription:
+    "Learn HTML5 and CSS3 from beginner to advanced level.",
+
+    description:
+    "This examination evaluates your knowledge of HTML5, CSS3, semantic elements, forms, tables, Flexbox, Grid, responsive design, animations and modern web development practices.",
+
+    icon: FaHtml5,
+
+    color: "#E34F26",
+
+    image:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+
+    banner:
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+
+    tier: "Free",
+
+    price: 0,
+
+    discount: 0,
+
+    finalPrice: 0,
+
+    category: "Frontend",
+
+    difficulty: "Beginner",
+
+    language: "English",
+
+    duration: 60,
+
+    questions: 40,
+
+    totalMarks: 80,
+
+    passingMarks: 32,
+
+    attempts: 3,
+
+    certificate: true,
+
+    lifetimeAccess: true,
+
+    negativeMarking: false,
+
+    instructor: "ExamPro Team",
+
+    enrolledStudents: 6800,
+
+    rating: 4.9,
+
+    reviews: 520,
+
+    lastUpdated: "July 2026",
+
+    topics: [
+        "HTML5",
+        "Semantic Tags",
+        "Forms",
+        "Tables",
+        "CSS Selectors",
+        "Box Model",
+        "Flexbox",
+        "CSS Grid",
+        "Position",
+        "Animations",
+        "Transitions",
+        "Media Queries",
+        "Responsive Design"
+    ],
+
+    requirements: [
+        "Basic Computer Knowledge"
+    ],
+
+    learningOutcomes: [
+        "HTML5 Fundamentals",
+        "Modern CSS3",
+        "Responsive Website Design",
+        "Flexbox & Grid",
+        "Professional Web Layouts"
+    ]
+},
 
 
 ];
