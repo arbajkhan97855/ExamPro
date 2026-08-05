@@ -13,8 +13,10 @@ import {
 import { ThemeContext } from "../../../context/ThemeContext";
 
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setSidebarOpen }) {
+    const navigate = useNavigate()
 
     const { theme, toggleTheme } = useContext(ThemeContext);
 
@@ -39,11 +41,12 @@ function Navbar() {
 
             <div className="navbar-left">
 
-                <button className="menu-btn">
-
-                    <FaBars />
-
-                </button>
+                <button
+        className="menu-btn"
+        onClick={() => setSidebarOpen(true)}
+    >
+        <FaBars />
+    </button>
 
                 <div className="search-box">
 
@@ -117,7 +120,7 @@ function Navbar() {
 
                         <div className="profile-dropdown">
 
-                            <button>
+                            <button onClick={()=>{navigate("/student/profile")}}>
 
                                 <FaUser />
 

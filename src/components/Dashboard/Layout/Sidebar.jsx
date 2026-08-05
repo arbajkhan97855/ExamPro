@@ -16,7 +16,13 @@ import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 // import Logo from "../../../../public/examPro.svg";
 
-function Sidebar() {
+function Sidebar({
+
+    sidebarOpen,
+
+    setSidebarOpen
+
+}) {
 
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -28,7 +34,7 @@ function Sidebar() {
 
     return (
 
-        <aside className="sidebar">
+        <aside className={`sidebar ${sidebarOpen ? "show" : ""}`}>
 
             {/* Logo */}
 
@@ -75,7 +81,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/dashboard">
+                    <NavLink to="/student/dashboard"  onClick={()=>setSidebarOpen(false)}>
 
                         <FaHome />
 
@@ -87,7 +93,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/exams">
+                    <NavLink to="/student/exams"  onClick={()=>setSidebarOpen(false)}>
 
                         <FaBookOpen />
 
@@ -99,7 +105,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/my-exams">
+                    <NavLink to="/student/my-exams" onClick={()=>setSidebarOpen(false)}>
 
                         <FaClipboardList />
 
@@ -111,7 +117,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/result-history">
+                    <NavLink to="/student/result-history" onClick={()=>setSidebarOpen(false)}>
 
                          <FaHistory />
 
@@ -123,7 +129,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/payments">
+                    <NavLink to="/student/payments" onClick={()=>setSidebarOpen(false)}>
 
                         <FaCreditCard />
 
@@ -135,7 +141,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/notifications">
+                    <NavLink to="/student/notifications" onClick={()=>setSidebarOpen(false)}>
 
                         <FaBell />
 
@@ -147,7 +153,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/profile">
+                    <NavLink to="/student/profile" onClick={()=>setSidebarOpen(false)}>
 
                         <FaUserGraduate />
 
@@ -159,7 +165,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/settings">
+                    <NavLink to="/student/settings" onClick={()=>setSidebarOpen(false)}>
 
                         <FaCog />
 
@@ -171,7 +177,7 @@ function Sidebar() {
 
                 <li>
 
-                    <NavLink to="/student/support">
+                    <NavLink to="/student/support" onClick={()=>setSidebarOpen(false)}>
 
                         <FaLifeRing />
 

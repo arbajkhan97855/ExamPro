@@ -18,12 +18,11 @@ import LiveExam from "./pages/Student/LiveExam/LiveExam";
 import Result from "./pages/Student/LiveExam/Result";
 import ResultReview from "./pages/Student/LiveExam/ResultReview";
 import ResultHistory from "./pages/Student/ResultHistory/ResultHistory";
-
-
-
-
-
-
+import MyExams from "./pages/Student/MyExams/MyExams";
+import Payments from "./pages/Student/Payments/Payments";
+import Notifications from "./pages/Student/Notifications/Notifications";
+import Settings from "./pages/Student/settings/Settings";
+import Profile from "./pages/Student/Profile/Profile";
 
 
 
@@ -41,6 +40,7 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/verify-forgot-otp" element={<VerifyForgotOtp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      
 
       {/* s-dashboard */}
     <Route
@@ -60,8 +60,11 @@ function App() {
        <Route path="result/:slug" element={<Result />}/>
        <Route path="result-review/:slug" element={<ResultReview />}/>
        <Route path="result-history" element={<ResultHistory />}/>
-
-      
+       <Route path="my-exams" element={<MyExams />} />
+         <Route path="payments" element={<Payments />}/>
+      <Route path="notifications" element={<Notifications />} />
+      <Route path="settings" element={<Settings />} />
+      <Route path="profile" element={<Profile />} />
 
       </Route>
      

@@ -4,9 +4,11 @@
 
     min-height:100vh;
 
-    background:#09091b;
+    background:var(--bg);
 
 }
+
+/* Right Area */
 
 .layout-right{
 
@@ -20,44 +22,48 @@
 
     min-height:100vh;
 
+    transition:.35s;
+
 }
+
+/* Main */
 
 .layout-content{
 
     flex:1;
 
-    padding:15px;.student-layout{
+    padding:30px;
 
-display:flex;
-
-min-height:100vh;
-
-background:#f5f7fb;
+    overflow-x:hidden;
 
 }
 
+/* Tablet */
+
+@media(max-width:992px){
+
 .layout-right{
 
-flex:1;
-
-margin-left:280px;
-
-display:flex;
-
-flex-direction:column;
-
-min-height:100vh;
+    margin-left:0;
 
 }
 
 .layout-content{
 
-flex:1;
-
-padding:30px;
+    padding:20px;
 
 }
 
-    overflow-x:hidden;
+}
+
+/* Mobile */
+
+@media(max-width:576px){
+
+.layout-content{
+
+    padding:15px;
+
+}
 
 }

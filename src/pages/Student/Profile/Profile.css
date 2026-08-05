@@ -1,0 +1,679 @@
+
+
+.ep-profile-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.ep-profile-hero {
+    width: 100%;
+    min-height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+
+    margin-bottom: 25px;
+
+    transition: .35s;
+}
+
+
+.ep-profile-hero-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+.ep-profile-avatar {
+    width: 105px;
+    height: 105px;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+
+.ep-profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid var(--card-bg);
+
+    box-shadow:
+        0 0 0 2px var(--primary),
+        0 10px 30px rgba(79, 70, 229, .25);
+}
+
+
+.ep-profile-online {
+    position: absolute;
+
+    right: 2px;
+    bottom: 4px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #22c55e;
+
+    color: white;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--card-bg);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.ep-profile-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 7px;
+}
+
+
+.ep-profile-heading h1 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.ep-profile-heading p {
+    margin: 6px 0 12px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+
+.ep-profile-status {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.ep-profile-status span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: var(--secondary);
+
+    color: var(--text-light);
+
+    border: 1px solid var(--border);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.ep-profile-status span svg {
+    color: #22c55e;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.ep-profile-edit-btn,
+.ep-profile-save-btn,
+.ep-profile-cancel-btn {
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+
+.ep-profile-edit-btn,
+.ep-profile-save-btn {
+    background: var(--primary);
+    color: white;
+}
+
+
+.ep-profile-edit-btn:hover,
+.ep-profile-save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(79, 70, 229, .25);
+}
+
+
+.ep-profile-cancel-btn {
+    background: var(--secondary);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+
+.ep-profile-cancel-btn:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+
+.ep-profile-action-group {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
+
+.ep-profile-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.55fr) minmax(300px, .9fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.ep-profile-card {
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .05);
+
+    transition: .35s;
+}
+
+
+.ep-profile-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.ep-profile-card-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.ep-profile-card-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: rgba(99, 102, 241, .12);
+
+    color: var(--primary);
+
+    font-size: 17px;
+}
+
+
+.ep-profile-card-heading h2 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 18px;
+}
+
+
+.ep-profile-card-heading p {
+    margin: 4px 0 0;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   PERSONAL FIELDS
+===================================================== */
+
+.ep-profile-fields {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.ep-profile-field {
+    min-width: 0;
+}
+
+
+.ep-profile-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.ep-profile-value,
+.ep-profile-input-wrap {
+    min-height: 50px;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 14px;
+
+    border-radius: 13px;
+
+    background: var(--secondary);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    transition: .3s;
+
+    box-sizing: border-box;
+}
+
+
+.ep-profile-value svg,
+.ep-profile-input-wrap svg {
+    flex-shrink: 0;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+
+.ep-profile-value span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.ep-profile-input-wrap:focus-within {
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .12);
+}
+
+
+.ep-profile-input-wrap input,
+.ep-profile-input-wrap select {
+
+    width: 100%;
+
+    min-width: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-family: inherit;
+}
+
+
+.ep-profile-input-wrap select {
+    cursor: pointer;
+}
+
+
+.ep-profile-input-wrap select option {
+    color: #111827;
+
+    background: #fff;
+}
+
+
+/* =====================================================
+   ACCOUNT DETAILS
+===================================================== */
+
+.ep-profile-account-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.ep-profile-account-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.ep-profile-account-item:last-child {
+    border-bottom: none;
+}
+
+
+.ep-profile-account-icon {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    font-size: 14px;
+}
+
+
+.ep-profile-account-item div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+
+.ep-profile-account-item span {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.ep-profile-account-item strong {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+.ep-profile-active {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #22c55e !important;
+}
+
+
+.ep-profile-active svg {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .ep-profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .ep-profile-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 22px;
+    }
+
+
+    .ep-profile-hero-left {
+        width: 100%;
+    }
+
+
+    .ep-profile-edit-btn {
+        width: 100%;
+    }
+
+
+    .ep-profile-action-group {
+        width: 100%;
+    }
+
+
+    .ep-profile-action-group button {
+        flex: 1;
+    }
+
+
+    .ep-profile-fields {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .ep-profile-hero-left {
+        align-items: flex-start;
+    }
+
+
+    .ep-profile-avatar {
+        width: 78px;
+        height: 78px;
+    }
+
+
+    .ep-profile-heading h1 {
+        font-size: 22px;
+    }
+
+
+    .ep-profile-heading p {
+        max-width: 210px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    .ep-profile-card {
+        padding: 18px;
+    }
+
+
+    .ep-profile-status {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .ep-profile-action-group {
+        flex-direction: column;
+    }
+
+
+    .ep-profile-action-group button {
+        width: 100%;
+    }
+
+}
+

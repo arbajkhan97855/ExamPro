@@ -355,43 +355,31 @@ LOGOUT
 RESPONSIVE
 =========================== */
 
-@media(max-width:992px) {
 
-    .sidebar {
+@media(max-width:992px){
 
-        left: -100%;
+.sidebar{
 
-    }
-
-    .sidebar.show {
-
-        left: 0;
-
-    }
+left:-100%;
 
 }
 
-@media(max-width:576px) {
+.sidebar.show{
 
-    .sidebar {
+left:0;
 
-        width: 260px;
+}
 
-        padding: 18px;
-    }
+}
 
-    .logo-circle {
+@media(max-width:576px){
 
-        width: 48px;
+.sidebar{
 
-        height: 48px;
-    }
+width:260px;
 
-    .sidebar-user img {
+padding:18px;
 
-        width: 70px;
-
-        height: 70px;
-    }
+}
 
 }
