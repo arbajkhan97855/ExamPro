@@ -1,0 +1,816 @@
+
+
+.ep-support-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    color: var(--text);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.ep-support-hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 250px;
+
+    padding: 42px 45px;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(99, 102, 241, .25),
+            transparent 35%
+        ),
+        var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .08);
+}
+
+
+.ep-support-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(99, 102, 241, .2);
+
+    right: 90px;
+    top: -80px;
+
+}
+
+
+.ep-support-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.ep-support-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.ep-support-hero h1 {
+
+    margin: 0 0 8px;
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    font-weight: 800;
+}
+
+
+.ep-support-hero p {
+
+    margin: 0 0 22px;
+
+    color: var(--text-light);
+
+    max-width: 620px;
+
+    line-height: 1.7;
+
+}
+
+
+.ep-support-search {
+
+    width: min(500px, 100%);
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 17px;
+
+    border-radius: 14px;
+
+    background: var(--secondary);
+
+    border: 1px solid var(--border);
+
+    transition: .3s;
+}
+
+
+.ep-support-search:focus-within {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, .1);
+}
+
+
+.ep-support-search svg {
+
+    color: var(--text-light);
+}
+
+
+.ep-support-search input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+.ep-support-hero-icon {
+
+    position: relative;
+    z-index: 2;
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    color: var(--primary);
+
+    background: rgba(99, 102, 241, .1);
+
+    border: 1px solid rgba(99, 102, 241, .2);
+
+    transform: rotate(8deg);
+
+}
+
+
+/* =====================================================
+   CONTACT CARDS
+===================================================== */
+
+.ep-support-contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.ep-support-contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+
+.ep-support-contact-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .08);
+}
+
+
+.ep-support-contact-icon {
+
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(99, 102, 241, .1);
+
+    color: var(--primary);
+
+    font-size: 20px;
+}
+
+
+.ep-support-contact-card span {
+
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.ep-support-contact-card strong {
+
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.ep-support-contact-card small {
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MAIN GRID
+===================================================== */
+
+.ep-support-main-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, .95fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.ep-support-section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+
+    padding: 5px 4px;
+}
+
+
+.ep-support-section-heading span {
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.ep-support-section-heading h2 {
+
+    margin: 5px 0 0;
+
+    font-size: 22px;
+}
+
+
+.ep-support-section-heading > svg {
+
+    font-size: 25px;
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.ep-support-faq-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.ep-support-faq-item {
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+
+.ep-support-faq-item:hover {
+
+    border-color: rgba(99, 102, 241, .4);
+}
+
+
+.ep-support-faq-open {
+
+    border-color: var(--primary);
+}
+
+
+.ep-support-faq-question {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.ep-support-faq-question span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.ep-support-faq-question span svg {
+
+    color: var(--primary);
+
+    flex-shrink: 0;
+}
+
+
+.ep-support-faq-question > svg {
+
+    color: var(--text-light);
+
+    transition: .3s;
+}
+
+
+.ep-support-faq-open
+.ep-support-faq-question > svg {
+
+    transform: rotate(180deg);
+
+    color: var(--primary);
+}
+
+
+.ep-support-faq-answer {
+
+    padding: 0 18px 18px 50px;
+}
+
+
+.ep-support-faq-answer p {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SUPPORT TICKET CARD
+===================================================== */
+
+.ep-support-ticket-card {
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .05);
+}
+
+
+.ep-support-ticket-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    margin-bottom: 22px;
+}
+
+
+.ep-support-ticket-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, .25);
+}
+
+
+.ep-support-ticket-heading span {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.ep-support-ticket-heading h2 {
+
+    margin: 4px 0 0;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.ep-support-ticket-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+.ep-support-form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        .7fr 1.3fr;
+
+    gap: 14px;
+}
+
+
+.ep-support-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.ep-support-form-group label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+.ep-support-form-group input,
+.ep-support-form-group select,
+.ep-support-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    background: var(--secondary);
+
+    color: var(--text);
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+
+.ep-support-form-group input,
+.ep-support-form-group select {
+
+    height: 46px;
+
+    padding: 0 13px;
+}
+
+
+.ep-support-form-group textarea {
+
+    padding: 13px;
+
+    resize: vertical;
+
+    min-height: 130px;
+}
+
+
+.ep-support-form-group input:focus,
+.ep-support-form-group select:focus,
+.ep-support-form-group textarea:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, .08);
+}
+
+
+.ep-support-submit-btn {
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.ep-support-submit-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(99, 102, 241, .25);
+}
+
+
+.ep-support-form-note {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .ep-support-main-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .ep-support-contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .ep-support-hero {
+
+        padding: 30px;
+
+    }
+
+    .ep-support-hero-icon {
+
+        display: none;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .ep-support-page {
+
+        padding-bottom: 30px;
+
+    }
+
+    .ep-support-hero {
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+
+    }
+
+    .ep-support-hero h1 {
+
+        font-size: 28px;
+
+    }
+
+    .ep-support-contact-card {
+
+        padding: 16px;
+
+    }
+
+    .ep-support-ticket-card {
+
+        padding: 18px;
+
+        border-radius: 20px;
+
+    }
+
+    .ep-support-form-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .ep-support-faq-question {
+
+        padding: 15px;
+
+        font-size: 13px;
+
+    }
+
+    .ep-support-faq-answer {
+
+        padding-left: 18px;
+
+    }
+
+}
+

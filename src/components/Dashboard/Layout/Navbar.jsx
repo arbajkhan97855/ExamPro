@@ -86,7 +86,7 @@ function Navbar({ setSidebarOpen }) {
 
                 </button>
 
-                <div className="notification">
+                <div className="notification" onClick={()=>{navigate("/student/notifications")}}>
 
                     <FaBell />
 
