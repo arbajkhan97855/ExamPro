@@ -304,7 +304,7 @@ FREE EXAM 3
 
     tier:"Premium",
 
-    price:299,
+    price:5,
 
     discount:20,
 

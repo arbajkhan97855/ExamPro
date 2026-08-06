@@ -42,12 +42,6 @@ function PaymentMethods({ exam }) {
             }
 
 
-       
-
-
-            // =====================================
-            // CREATE PAYMENT ORDER
-            // =====================================
 
             const orderResponse = await fetch(
                 `${API_URL}/api/payment/create-order`,
@@ -73,7 +67,17 @@ function PaymentMethods({ exam }) {
             );
 
 
-            const orderData = await orderResponse.json();
+           console.log("Status:", orderResponse.status);
+console.log(
+  "Content-Type:",
+  orderResponse.headers.get("content-type")
+);
+
+const responseText = await orderResponse.text();
+
+console.log(responseText);
+
+return;
 
 
             if (!orderResponse.ok || !orderData.success) {
