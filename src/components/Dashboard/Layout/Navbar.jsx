@@ -37,29 +37,7 @@ function Navbar({ setSidebarOpen }) {
 
         <header className="navbar">
 
-            {/* Left */}
-
-            <div className="navbar-left">
-
-                <button
-        className="menu-btn"
-        onClick={() => setSidebarOpen(true)}
-    >
-        <FaBars />
-    </button>
-
-                <div className="search-box">
-
-                    <FaSearch />
-
-                    <input
-                        type="text"
-                        placeholder="Search exams..."
-                    />
-
-                </div>
-
-            </div>
+           
 
             {/* Right */}
 

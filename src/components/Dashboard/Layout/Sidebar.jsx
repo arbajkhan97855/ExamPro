@@ -50,7 +50,7 @@ function Sidebar({
 
                 </div>
 
-                <div>
+                <div id="sidebar-header-title">
 
                     <h2>ExamPro</h2>
 

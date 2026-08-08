@@ -40,11 +40,11 @@
 
 /* Tablet */
 
-@media(max-width:992px){
+@media(max-width:1300px){
 
 .layout-right{
 
-    margin-left:0;
+    margin-left:90px !important;
 
 }
 

@@ -13,127 +13,20 @@
 
     padding:0 22px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
 
     margin-bottom:25px;
 
     transition:.35s;
-    position:sticky;
 
-top:15px;
 
-z-index:999;
+display: flex;
+justify-content: end !important;
 
-}
 
-.menu-btn{
-
-    display:none;
-
-    width:46px;
-
-    height:46px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:var(--primary);
-
-    color:#fff;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-    transition:.3s;
-
-}
-
-.menu-btn:hover{
-
-    transform:scale(1.05);
 
 }
 
 
-/* =========================
-LEFT
-========================= */
-
-.navbar-left{
-
-   
-display:flex;
-
-align-items:center;
-
-gap:16px;
-
-flex:1;
-}
-
-
-
-.search-box{
-
-   flex:1;
-
-max-width:450px;
-
-min-width:220px;
-
-    height:48px;
-
-    background:var(--secondary);
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:0 16px;
-
-    gap:10px;
-
-    transition:.35s;
-
-}
-
-.search-box:focus-within{
-
-border-color:var(--primary);
-
-box-shadow:0 0 0 4px rgba(99,102,241,.12);
-
-}
-
-.search-box svg{
-
-    color:var(--text-light);
-
-}
-
-.search-box input{
-
-    width:100%;
-
-    background:none;
-
-    border:none;
-
-    outline:none;
-
-    color:var(--text);
-
-}
 
 /* =========================
 RIGHT
@@ -146,6 +39,8 @@ RIGHT
     align-items:center;
 
     gap:18px;
+    padding: 0px 30px;
+    
 
 }
 
@@ -397,7 +292,7 @@ Dropdown
 
     width:220px;
 
-     background:var(--card-bg);
+     background:var(--secondary);
 
     border:1px solid var(--border);
     border-radius:18px;
@@ -406,7 +301,7 @@ Dropdown
 
     overflow:hidden;
 
-    z-index:10000;
+    z-index:100000;
 
 }
 
@@ -447,67 +342,11 @@ Responsive
 ========================= */
 
 
-@media(max-width:992px){
 
-.menu-btn{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-}
-
-.profile-text{
-
-display:none;
-
-}
-
-.search-box{
-
-flex:1;
-
-max-width:280px;
-
-}
-
-}
 
 @media(max-width:768px){
 
-.navbar{
 
-padding:15px;
-
-height:auto;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-}
-
-.navbar-left{
-
-width:100%;
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-}
-
-.search-box{
-
-flex:1;
-
-max-width:100%;
-
-}
 
 .navbar-right{
 
@@ -526,5 +365,15 @@ gap:12px;
 padding:8px;
 
 }
+
+}
+
+@media(max-width:400px){
+ .profile-text{
+    display: none;
+ }
+ .profile-dropdown{
+    z-index: 1000000000;
+ }
 
 }

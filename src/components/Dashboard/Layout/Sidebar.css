@@ -1,11 +1,4 @@
-/* ===========================
-   GOOGLE FONT
-=========================== */
 
-
-/* ===========================
-   SIDEBAR
-=========================== */
 
 .sidebar {
 
@@ -353,35 +346,48 @@ LOGOUT
     transform: translateY(-2px);
 }
 
-/* ===========================
-RESPONSIVE
-=========================== */
 
 
-@media(max-width:992px){
+
+@media(max-width:1300px){
+
 
 .sidebar{
 
-left:-100%;
-
-}
-
-.sidebar.show{
-
-left:0;
-
-}
-
-}
-
-@media(max-width:576px){
-
-.sidebar{
-
-width:260px;
+width:fit-content;
 
 padding:18px;
 
+}
+
+#sidebar-header-title{
+  display: none;
+}
+
+.sidebar-menu li span{
+  display: none;
+}
+.sidebar-menu li{
+    justify-content: center;
+}
+
+.logout-btn{
+    display: none;
+}
+.premium-card{
+    display: none;
+}
+.sidebar{
+    height: 100%;
+    font-size: 20px !important;
+  
+}
+.sidebar-menu{
+  gap: 30px;
+  font-size: 25px;
+}
+.logo-circle{
+width:50px;
 }
 
 }
