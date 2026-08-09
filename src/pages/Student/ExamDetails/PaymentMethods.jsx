@@ -67,27 +67,15 @@ function PaymentMethods({ exam }) {
             );
 
 
-           console.log("Status:", orderResponse.status);
-console.log(
-  "Content-Type:",
-  orderResponse.headers.get("content-type")
-);
 
-const responseText = await orderResponse.text();
+const orderData = await orderResponse.json();
 
-console.log(responseText);
-
-return;
-
-
-            if (!orderResponse.ok || !orderData.success) {
-
-                throw new Error(
-                    orderData.message ||
-                    "Unable to create payment order"
-                );
-
-            }
+if (!orderResponse.ok || !orderData.success) {
+    throw new Error(
+        orderData.message ||
+        "Unable to create payment order"
+    );
+}
 
 
             // =====================================

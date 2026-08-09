@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 import { exams } from "../../../data/mockData";
 
 import ExamInfoCard from "./ExamInfoCard";
-import PaymentSummary from "./PaymentSummary";
-import PaymentMethods from "./PaymentMethods";
+
 import ExamTabs from "./ExamTabs";
 
 import "./ExamDetails.css";
@@ -25,30 +24,12 @@ function ExamDetails() {
         <section className="ep-exd-page">
 
             <div
-                className={`ep-exd-top ${
-                    exam.tier === "Free"
-                        ? "ep-free-layout"
-                        : ""
-                }`}
+                className={`ep-exd-top ep-free-layout }`}
             >
 
                 <ExamInfoCard exam={exam} />
 
-                {
-
-                    exam.tier === "Premium" && (
-
-                        <div className="ep-exd-payment-area">
-
-                            <PaymentSummary exam={exam} />
-
-                            <PaymentMethods exam={exam} />
-
-                        </div>
-
-                    )
-
-                }
+               =
 
             </div>
 

@@ -16,10 +16,277 @@ import { motion } from "framer-motion";
 
 import "./ExamDetails.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 function ExamInfoCard({ exam }) {
-    const navigate = useNavigate();
+
     const Icon = exam.icon;
+
+
+    const API_URL = import.meta.env.VITE_API_URL;
+    const navigate = useNavigate();
+
+
+    const [loading, setLoading] = useState(false);
+
+    const handlePayment = async () => {
+
+        if (loading) return;
+
+        try {
+
+            setLoading(true);
+
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+
+                alert("Please login first");
+                navigate("/login");
+
+
+                return;
+
+            }
+
+
+
+            const orderResponse = await fetch(
+                `${API_URL}/api/payment/create-order`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+
+                    body: JSON.stringify({
+
+                        examSlug: exam.slug,
+
+                        examName: exam.name,
+
+                        amount: exam.finalPrice
+
+                    })
+
+                }
+            );
+
+
+
+            const orderData = await orderResponse.json();
+
+            if (!orderResponse.ok || !orderData.success) {
+                throw new Error(
+                    orderData.message ||
+                    "Unable to create payment order"
+                );
+            }
+
+
+            // =====================================
+            // RAZORPAY OPTIONS
+            // =====================================
+
+            const options = {
+
+                key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+
+                amount: orderData.order.amount,
+
+                currency: orderData.order.currency,
+
+                name: "ExamPro",
+
+                description: exam.name,
+
+                order_id: orderData.order.id,
+
+
+                handler: async function (response) {
+
+                    try {
+
+                        // =====================================
+                        // VERIFY PAYMENT
+                        // =====================================
+
+                        const verifyResponse = await fetch(
+                            `${API_URL}/api/payment/verify`,
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${token}`
+                                },
+
+                                body: JSON.stringify({
+
+                                    examSlug: exam.slug,
+
+                                    examName: exam.name,
+
+                                    amount: exam.finalPrice,
+
+                                    razorpay_order_id:
+                                        response.razorpay_order_id,
+
+                                    razorpay_payment_id:
+                                        response.razorpay_payment_id,
+
+                                    razorpay_signature:
+                                        response.razorpay_signature
+
+                                })
+
+                            }
+                        );
+
+
+                        const verifyData =
+                            await verifyResponse.json();
+
+
+                        if (!verifyResponse.ok || !verifyData.success) {
+
+                            throw new Error(
+                                verifyData.message ||
+                                "Payment verification failed"
+                            );
+
+                        }
+
+
+                        alert(
+                            "Payment successful! Your exam has been purchased."
+                        );
+
+
+                        navigate("/student/my-exams");
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Payment Verification Error:",
+                            error
+                        );
+
+                        alert(
+                            error.message ||
+                            "Payment verification failed"
+                        );
+
+                    } finally {
+
+                        setLoading(false);
+
+                    }
+
+                },
+
+
+                prefill: {
+
+                    name:
+                        JSON.parse(
+                            localStorage.getItem("user")
+                        )?.fullname || "",
+
+                    email:
+                        JSON.parse(
+                            localStorage.getItem("user")
+                        )?.email || ""
+
+                },
+
+
+                notes: {
+
+                    examSlug: exam.slug,
+
+                    examName: exam.name
+
+                },
+
+
+                theme: {
+
+                    color: "#4F46E5"
+
+                },
+
+
+                modal: {
+
+                    ondismiss: function () {
+
+                        setLoading(false);
+
+                    }
+
+                }
+
+            };
+
+
+            // =====================================
+            // OPEN RAZORPAY
+            // =====================================
+
+            const razorpay =
+                new window.Razorpay(options);
+
+
+            razorpay.on(
+                "payment.failed",
+                function (response) {
+
+                    console.error(
+                        "Payment Failed:",
+                        response.error
+                    );
+
+                    alert(
+                        response.error?.description ||
+                        "Payment failed"
+                    );
+
+                    setLoading(false);
+
+                }
+            );
+
+
+            razorpay.open();
+
+
+        } catch (error) {
+
+            console.error(
+                "Payment Error:",
+                error
+            );
+
+            alert(
+                error.message ||
+                "Something went wrong while starting payment"
+            );
+
+            setLoading(false);
+
+        }
+
+    };
+
+
+
+
+
     return (
 
         <motion.div
@@ -231,13 +498,18 @@ function ExamInfoCard({ exam }) {
                     ?
 
                     <button className="ep-exd-start-btn" onClick={() =>
-            navigate(`/student/live-exam/${exam.slug}`)
-        }>Start Exam</button>
+                        navigate(`/student/live-exam/${exam.slug}`)
+                    }>Start Exam</button>
                     :
-                    <button className="ep-exd-buy-btn"  onClick={() =>
-            navigate(`/student/payment/${exam.slug}`)
-        }>
-                        Buy Now ₹{exam.finalPrice}
+                    <button
+                        className="ep-exd-buy-btn"
+                        onClick={handlePayment}
+                        disabled={loading}
+                    >
+                        {loading
+                            ? "Processing Payment..."
+                            : `Buy Now ₹${exam.finalPrice}`
+                        }
                     </button>
 
             }
