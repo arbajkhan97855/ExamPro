@@ -231,3 +231,141 @@
     opacity:.85;
 
 }
+
+/* ================================
+   TABLET RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+
+    .exam-header {
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .exam-header-left {
+        width: 55%;
+    }
+
+    .exam-header-right {
+        width: 40%;
+    }
+
+    .exam-header-left h2 {
+        font-size: 32px;
+    }
+
+    .exam-header-left p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .free-card {
+        padding: 22px;
+    }
+
+    .free-card h3 {
+        font-size: 24px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .exam-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 25px;
+        border-radius: 20px;
+        gap: 25px;
+    }
+
+    .exam-header-left {
+        width: 100%;
+    }
+
+    .exam-header-right {
+        width: 100%;
+    }
+
+    .exam-header-left h2 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .exam-header-left p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 22px;
+    }
+
+    .exam-badge {
+        font-size: 13px;
+        padding: 8px 14px;
+        margin-bottom: 18px;
+    }
+
+    .exam-header-left button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .free-card {
+        width: 100%;
+        padding: 22px;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    .exam-header {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .exam-header-left h2 {
+        font-size: 25px;
+    }
+
+    .exam-header-left p {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .exam-badge {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .exam-header-left button {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 18px;
+    }
+
+    .free-card {
+        padding: 20px;
+    }
+
+    .free-card h3 {
+        font-size: 22px;
+    }
+
+    .progress-box {
+        height: 8px;
+        margin: 16px 0;
+    }
+
+}
