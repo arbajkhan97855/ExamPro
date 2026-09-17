@@ -29,7 +29,7 @@ function ExamDetails() {
 
                 <ExamInfoCard exam={exam} />
 
-               =
+               
 
             </div>
 
