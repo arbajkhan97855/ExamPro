@@ -1,7 +1,7 @@
-
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { getApi } from "../../../services/api"
 
 import {
     FaPlay,
@@ -12,7 +12,6 @@ import {
     FaBookOpen
 } from "react-icons/fa";
 
-import { exams } from "../../../data/mockData";
 
 import "./MyExams.css";
 
@@ -21,54 +20,64 @@ function MyExams() {
 
     const navigate = useNavigate();
 
+   const [myExams, setMyExams] = useState([]);
 
-    /*
-        TEMPORARY DATA
+const [loading, setLoading] = useState(true);
 
-        Abhi frontend mockData se exams aa rahe hain.
+const [error, setError] = useState("");
+useEffect(() => {
 
-        Future:
+    const fetchMyExams = async () => {
 
-        Backend API
-             ↓
-        Purchased Exams
-             ↓
-        My Exams
-    */
+        try {
 
-    const myExams = useMemo(() => {
+            setLoading(true);
+            setError("");
 
-        return exams.filter((exam) => {
+            const data = await getApi("/api/student/my-exams");
 
-            /*
-                Temporary condition.
+            if (data.success) {
 
-                Abhi Premium exams ko purchased
-                maan rahe hain.
+                setMyExams(data.exams || []);
 
-                Payment Gateway complete hone ke baad
-                ye condition API purchase status se aayegi.
-            */
+            } else {
 
-            return exam.tier === "Premium";
+                setError(
+                    data.message || "Unable to load your exams"
+                );
 
-        });
+            }
 
-    }, []);
+        } catch (error) {
 
+            console.error("My Exams Error:", error);
 
-    const handleStart = (exam) => {
+            setError(
+                "Unable to connect with server"
+            );
 
-        navigate(`/student/live-exam/${exam.slug}`);
+        } finally {
 
-    };
+            setLoading(false);
 
-
-    const handleView = (exam) => {
-
-        navigate(`/student/exams/${exam.slug}`);
+        }
 
     };
+
+    fetchMyExams();
+
+}, []);
+
+
+
+const handleStart = (exam) => {
+    navigate(`/student/live-exam/${exam.exam_slug}`);
+};
+
+
+ const handleView = (exam) => {
+    navigate(`/student/exams/${exam.exam_slug}`);
+};
 
 
     return (
@@ -123,9 +132,44 @@ function MyExams() {
                 EMPTY STATE
             ========================= */}
 
-            {myExams.length === 0 ? (
+{loading ? (
+    <div className="ep-my-exams-empty">
 
-                <div className="ep-my-exams-empty">
+        <div className="ep-my-exams-empty-icon">
+            <FaBookOpen />
+        </div>
+
+        <h2>
+            Loading Your Exams...
+        </h2>
+
+        <p>
+            Please wait while we load your purchased exams.
+        </p>
+
+    </div>
+
+) : error ? (
+
+    <div className="ep-my-exams-empty">
+
+        <div className="ep-my-exams-empty-icon">
+            <FaBookOpen />
+        </div>
+
+        <h2>
+            Something went wrong
+        </h2>
+
+        <p>
+            {error}
+        </p>
+
+    </div>
+
+) : myExams.length === 0 ? (
+
+      <div className="ep-my-exams-empty">
 
                     <div className="ep-my-exams-empty-icon">
 
@@ -152,14 +196,9 @@ function MyExams() {
 
                 </div>
 
-            ) : (
+) : (
 
-
-                /* =========================
-                    EXAM GRID
-                ========================= */
-
-                <div className="ep-my-exams-grid">
+    <div className="ep-my-exams-grid">
 
                     {myExams.map((exam) => (
 
@@ -167,7 +206,7 @@ function MyExams() {
 
                             className="ep-my-exam-card"
 
-                            key={exam.slug}
+                            key={exam.id}
 
                             initial={{
                                 opacity: 0,
@@ -192,22 +231,11 @@ function MyExams() {
 
                             {/* IMAGE */}
 
-                            <div className="ep-my-exam-image">
+                         <div className="ep-my-exam-image-placeholder">
 
-                                <img
-                                    src={exam.banner}
-                                    alt={exam.name}
-                                />
+    <FaBookOpen />
 
-                                <span className="ep-my-exam-status">
-
-                                    <FaCheckCircle />
-
-                                    Enrolled
-
-                                </span>
-
-                            </div>
+</div>
 
 
                             {/* CONTENT */}
@@ -215,38 +243,27 @@ function MyExams() {
                             <div className="ep-my-exam-content">
 
 
-                                <div className="ep-my-exam-category">
+                             <div className="ep-my-exam-category">
+    Premium Exam
+</div>
 
-                                    {exam.category}
+<h2>
+    {exam.exam_name}
+</h2>
 
-                                </div>
+<div className="ep-my-exam-meta">
 
+    <span>
+        <FaClock />
+        Exam
+    </span>
 
-                                <h2>
-                                    {exam.name}
-                                </h2>
+    <span>
+        <FaQuestionCircle />
+        Purchased
+    </span>
 
-
-                                <div className="ep-my-exam-meta">
-
-                                    <span>
-
-                                        <FaClock />
-
-                                        {exam.duration} Min
-
-                                    </span>
-
-
-                                    <span>
-
-                                        <FaQuestionCircle />
-
-                                        {exam.questions} Questions
-
-                                    </span>
-
-                                </div>
+</div>
 
 
                                 <div className="ep-my-exam-divider" />
@@ -300,7 +317,10 @@ function MyExams() {
 
                 </div>
 
-            )}
+)}
+
+
+          
 
         </section>
 
