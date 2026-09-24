@@ -1,0 +1,126 @@
+.receipt-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+.payment-receipt {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+    font-family: Arial, sans-serif;
+}
+.payment-receipt h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2563eb;
+    text-align: center;
+}
+
+.payment-receipt > p {
+    margin: 6px 0 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.payment-receipt hr {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+}
+
+.payment-receipt > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.payment-receipt > div:last-child {
+    border-bottom: none;
+}
+
+.payment-receipt strong {
+    color: #334155;
+}
+
+.payment-receipt span {
+    color: #0f172a;
+    text-align: right;
+    word-break: break-word;
+}
+
+
+
+
+
+
+
+.receipt-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #334155;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.receipt-close:hover {
+    background: #e2e8f0;
+    color: #ef4444;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .payment-receipt {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .payment-receipt > div {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .payment-receipt span {
+        text-align: left;
+    }
+}

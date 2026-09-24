@@ -320,8 +320,6 @@ const handleStart = (exam) => {
 )}
 
 
-          
-
         </section>
 
     );

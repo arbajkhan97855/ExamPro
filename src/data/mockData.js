@@ -392,11 +392,11 @@ PREMIUM EXAM 1
 
     tier:"Premium",
 
-    price:299,
+    price:4,
 
     discount:20,
 
-    finalPrice:239,
+    finalPrice:2,
 
     category:"Frontend",
 
